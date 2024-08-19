@@ -31,6 +31,29 @@
         };
     };
 
+    macros {
+        DV_CUT: DV_CUT {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LEFT_ALT) &kp LEFT_WIN &kp C>;
+            label = "DV_CUT";
+        };
+
+        DV_AUDIO: DV_AUDIO {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_ALT &kp LEFT_WIN &kp A>;
+            label = "DV_AUDIO";
+        };
+
+        DV_EDIT: DV_EDIT {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_ALT &kp LEFT_WIN &kp E>;
+            label = "DV_EDIT";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -57,10 +80,10 @@
         sys {
             label = "Sym";
             bindings = <
-&bt BT_CLR      &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans
-&bt BT_CLR_ALL  &trans        &trans        &trans        &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans
-&trans          &trans        &trans        &trans        &trans  &trans          &trans  &trans  &trans  &trans  &trans  &bootloader
-                              &trans        &trans        &trans  &trans  &trans  &trans  &trans  &trans
+&bt BT_CLR  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans
+&trans      &DV_AUDIO     &trans        &trans        &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans
+&trans      &trans        &trans        &DV_CUT       &trans  &trans          &trans  &trans  &trans  &trans  &trans  &bootloader
+                          &trans        &trans        &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
     };
