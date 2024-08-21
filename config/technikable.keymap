@@ -36,6 +36,7 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
+                <&macro_wait_time 3000>,
                 <&kp LEFT_ALT &kp LEFT_WIN &kp C>,
                 <&macro_wait_time 1000>,
                 <&kp LEFT_ALT &kp LEFT_WIN &kp A>,
